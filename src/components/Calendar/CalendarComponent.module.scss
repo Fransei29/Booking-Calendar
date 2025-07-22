@@ -1,0 +1,167 @@
+.container {
+  background: #fff;
+  padding: clamp(0.3rem, 1.5vw, 0.8rem) clamp(1.2rem, 3vw, 2.5rem); // Less top/bottom, more left/right
+  border-radius: 12px;
+  width: clamp(320px, 45vw, 460px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+   
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem; 
+      margin-top: 0.3rem;
+      color: #333;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 500;
+    } 
+}
+
+.month {
+  text-align: center;
+  margin-bottom: 0.2rem; // Reduced from 1.5rem to bring it closer to calendar
+  color: #333;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: clamp(0.3rem, 1vw, 0.2rem);
+  margin-bottom: 2rem;
+}
+
+.dayLabel {
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  padding: 1rem 0; // Reduced from 0.5rem to bring closer to date cells
+}
+
+.emptyCell {
+  height: clamp(50px, 8vh, 70px);
+}
+
+.dateCell {
+  background: #fff;
+  border: none;
+  padding: 0.5rem 0.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  height: clamp(50px, 8vh, 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  transition: all 0.2s;
+  color: #333;
+}
+
+.dateCell:hover:not(.unavailable) {
+  background: #f8f8f8;
+}
+
+.selected {
+  background: #9B7BBF !important;
+  color: white !important;
+}
+
+.unavailable {
+  background: #EAEAEA;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.dayNumber {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.price {
+  font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+  font-weight: 500;
+}
+
+.totalBox {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0;
+}
+
+.selectBox {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ddd;
+  border-right: none;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: #333;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 500;
+}
+
+.selectBox span {
+  display: block;
+}
+
+.totalInfo {
+  background: #EAEAEA;
+  padding: 1rem;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #ddd;
+  border-left: none;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: #333;
+}
+
+.totalInfo span:first-child {
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 500;
+}
+
+.totalPrice {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: #333;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.totalPrice::before {
+  content: "$";
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: clamp(0.8rem, 2vw, 1rem);
+  }
+  
+  .calendarGrid {
+    gap: clamp(0.2rem, 0.5vw, 0.3rem);
+  }
+  
+  .totalBox {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+  

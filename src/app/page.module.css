@@ -107,6 +107,18 @@ a.secondary {
   flex-shrink: 0;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: #d9a7e0;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
