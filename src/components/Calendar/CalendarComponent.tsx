@@ -13,7 +13,7 @@ const DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 const generateAprilDates = (): DateInfo[] => {
   const days: DateInfo[] = [];
   const selectedDates = [1, 2, 3, 11, 12, 13, 21, 22];
-  const unavailableDates = [6, 7, 9, 10, 19, 20, 28, 29]; // Removed 27
+  const unavailableDates = [6, 7, 9, 10, 19, 20, 28, 29]; 
   
   for (let i = 1; i <= 30; i++) {
     const date = `2024-04-${i.toString().padStart(2, '0')}`;
