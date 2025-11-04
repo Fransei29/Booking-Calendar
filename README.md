@@ -168,9 +168,4 @@ npm run build
 npm start
 ```
 
-
-
-*Built with ❤️ using Next.js, React, and SCSS*
-
-**Franco Seiler**  
 [www.francoseiler.com]
